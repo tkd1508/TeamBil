@@ -10,5 +10,6 @@ public interface BoardMapper {
 	public void insert(BoardVO board);
 	public BoardVO read(int bno);
 	public int delete(int bno);
+	public int update(BoardVO board); // 그냥 테스트겸 해놨어
 	
 }
