@@ -41,6 +41,7 @@
      	</dependency>   
      	
      	<!-- S006 AspectJ aspectjrt의 정보를 바탕으로 aspect를 구성한 코드를 생성하는데 필요한 프로그램-->
+     	<!-- aop 관점지향프로그래밍 -->
      	<dependency>
 	        <groupId>org.aspectj</groupId>
 	        <artifactId>aspectjweaver</artifactId>
@@ -171,6 +172,7 @@
 
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
 		<!-- root-context에 mybatis-spring 태크를 사용하기 위해 필요 -->
+		<!-- mybatis의 확장판 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
@@ -200,6 +202,9 @@
 		</dependency>
 		
 		<!-- DB end -->
+		
+		
+		
 		
 		<!-- S007 트렌젝션 TX 의존성 주입 -->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->

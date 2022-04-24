@@ -11,5 +11,5 @@ public interface BoardMapper {
 	public BoardVO read(int bno);
 	public int delete(int bno);
 	public int update(BoardVO board); // 그냥 테스트겸 해놨어
-	
+	// 브릿지 테스트용
 }
