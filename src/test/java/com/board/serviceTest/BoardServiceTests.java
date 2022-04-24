@@ -47,19 +47,20 @@ public class BoardServiceTests {
 		log.info(service.get(4)+" ================= getread");
 		}
 	
-	/*
+	
 	@Test public void testDelete() {
-		log.info(boardmapper.delete(2)+" ================= delete"); // 삭제 완료되면 1을 반환한다.
+		log.info(service.remove(2)+" ================= delete"); // 삭제 완료되면 1을 반환한다.
 		}
 	
 	@Test public void testUpdate() {
 		BoardVO dto = new BoardVO();
-		dto.setBno(3);
-		dto.setTitle("수정하는 글"); dto.setContent("내용 수정"); dto.setWriter("user00");
-		int count = boardmapper.update(dto);
-		log.info(count +" ================= update");
+		
+		if (dto == null) { return; }
+		
+		dto.setTitle("수정하는 글");
+		log.info(service.modify(dto)+" ================= 수정 결과 출력"); 
 		}
-	*/
+	
 	
 	
 }

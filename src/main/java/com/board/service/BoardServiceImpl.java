@@ -15,23 +15,39 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 
 public class BoardServiceImpl implements BoardService {
-	
-	/*
-	 * @Setter(onMethod_ = @Autowired) private BoardMapper mapper;
-	 * 
-	 * @Override public void register(BoardVO board) { // TODO Auto-generated method
-	 * stub log.info(board+"============ 등록?? "); }
-	 * 
-	 * @Override public BoardVO get(int bno) { // TODO Auto-generated method stub
-	 * return null; }
-	 * 
-	 * @Override public boolean modify(BoardVO board) { // TODO Auto-generated
-	 * method stub return false; }
-	 * 
-	 * @Override public boolean remove(int bno) { // TODO Auto-generated method stub
-	 * return false; }
-	 * 
-	 * @Override public List<BoardVO> list() { // TODO Auto-generated method stub
-	 * log.info("===========service List"); return mapper.list(); }
-	 */
+
+	@Setter(onMethod_ = @Autowired)
+	private BoardMapper mapper;
+
+	@Override
+	public void register(BoardVO board) {
+		// TODO Auto-generated method stub
+		log.info(board + "============ 등록?? ");
+	}
+
+	@Override
+	public BoardVO get(int bno) { // TODO Auto-generated method stub
+		log.info(bno + "============ 번 게시글 검색 ");
+		return mapper.read(bno);
+	}
+
+	@Override
+	public boolean modify(BoardVO board) {
+		// TODO Auto-generated method stub
+		log.info(board + "============ 수정하기 ");
+		return mapper.update(board) == 1; // 업데이트 성공시 1을 반환 실패시 0을 반환하게 됨
+	}
+
+	@Override
+	public boolean remove(int bno) { // TODO Auto-generated method stub
+		log.info(bno + "============ 번 게시글 삭제 ");
+		return mapper.delete(bno) == 1;
+	}
+
+	@Override
+	public List<BoardVO> list() { // TODO Auto-generated method stub
+		log.info("===========service List");
+		return mapper.list();
+	}
+
 }
