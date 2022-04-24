@@ -1,5 +1,5 @@
 package com.tomcatTest.test;
 
 public interface TestMapper {
-	public String test2();
+	public String test();
 }

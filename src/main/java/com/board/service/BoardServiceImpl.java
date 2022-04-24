@@ -16,38 +16,22 @@ import lombok.extern.log4j.Log4j;
 
 public class BoardServiceImpl implements BoardService {
 	
-	@Setter(onMethod_ = @Autowired)
-	private BoardMapper mapper;
-	
-	@Override
-	public void register(BoardVO board) {
-		// TODO Auto-generated method stub
-		log.info(board+"============ 등록?? ");
-	}
-
-	@Override
-	public BoardVO get(int bno) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean modify(BoardVO board) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean remove(int bno) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public List<BoardVO> list() {
-		// TODO Auto-generated method stub
-		log.info("===========service List");
-		return mapper.list();
-	}
-
+	/*
+	 * @Setter(onMethod_ = @Autowired) private BoardMapper mapper;
+	 * 
+	 * @Override public void register(BoardVO board) { // TODO Auto-generated method
+	 * stub log.info(board+"============ 등록?? "); }
+	 * 
+	 * @Override public BoardVO get(int bno) { // TODO Auto-generated method stub
+	 * return null; }
+	 * 
+	 * @Override public boolean modify(BoardVO board) { // TODO Auto-generated
+	 * method stub return false; }
+	 * 
+	 * @Override public boolean remove(int bno) { // TODO Auto-generated method stub
+	 * return false; }
+	 * 
+	 * @Override public List<BoardVO> list() { // TODO Auto-generated method stub
+	 * log.info("===========service List"); return mapper.list(); }
+	 */
 }

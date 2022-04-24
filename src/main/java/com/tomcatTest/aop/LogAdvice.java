@@ -33,7 +33,7 @@ public class LogAdvice {
 	}
 	*/
 	
-	
+	/*
 	@AfterThrowing(pointcut = "execution(* com.aop.simple.Simple*.*(..))", throwing="exception")
 	
 	public void logException(Exception exception) {
@@ -42,8 +42,8 @@ public class LogAdvice {
 		log.info("===== cross-cutting core =====");
 		
 	}
+	*/
 	
-	/*
 	@Around("execution(* com.aop.simple.Simple*.*(..))")
 	
 	public Object logTime(ProceedingJoinPoint pjp) {
@@ -73,5 +73,5 @@ public class LogAdvice {
 		return result;
 		
 	}
-	*/
+	
 }
