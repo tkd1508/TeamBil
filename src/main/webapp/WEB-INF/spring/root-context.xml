@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- S002 Namespaces 에서 Context를 체크해줘야 src/main/java의 com.company.dto 형태의 모델을 스캔할 수 있다. -->
+	<!-- S003 Namespaces 에서 mybatis-spring를 체크해줘야 src/main/java의 com.company.mapper의 인터페이스를 스캔할 수 있다. -->
+
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/sanguk1508?useSSL=false"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="1234"></property>
+	</bean>
+	<!-- DBCP 테스트 할 때 쓰이는 거야. -->
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+	<constructor-arg ref="hikariConfig"></constructor-arg>
+	</bean>
+	
+	<!-- mybatis -->
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="dataSource"/>
+	<property name="configLocation" value="classpath:/mybatis-config.xml" />
+	</bean>
+	
+	<!-- mapper (src/main/java) -->
+	<mybatis-spring:scan base-package="com.tomcatTest.test"/> 
+	<mybatis-spring:scan base-package="com.board.mapper"/> 
+	
+	<!-- model (src/main/java) -->
+	<context:component-scan base-package="com.board.vo"></context:component-scan>
+	
+	<!-- @Service를 scan하도록 적어줌 -->
+	<context:component-scan base-package="com.board.service"></context:component-scan>
+	
+	
+	<!-- AOP -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<context:component-scan base-package="com.tomcatTest.aop"></context:component-scan>
+	<context:component-scan base-package="com.aop.simple"></context:component-scan>
+	
+	<!-- TX -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<tx:annotation-driven/>
+	
+</beans>
