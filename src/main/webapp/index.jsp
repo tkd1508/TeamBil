@@ -9,7 +9,7 @@
 <body>
 <div class = "container panel panel-info"><h3 class="panel-heading">Mtest</h3>
 <p class="panel-body"><a href="${pageContext.request.contextPath}/board/list2" class="btn btn-info">start</a></p>
-<p> 테스트 입니다. </p>
+<p> 테스트 입니다. 222222 </p>
 
 </div>
 </body>
