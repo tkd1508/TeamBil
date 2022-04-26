@@ -24,6 +24,10 @@
 					class="btn btn-info">글 등록하기</a>
 			</p>
 		</div>
+		
+		
+		
+		
 		<div class="card-body">
 			<div class="table-responsive">
 				<table class="table table-bordered" id="dataTable" width="100%"
@@ -37,9 +41,9 @@
 							<th>수정일</th>
 						</tr>
 					</thead>
-					<c:forEach items="${list}" var="board">
+					<c:forEach items="${list}" var="board" varStatus="status">
 						<tr>
-							<td><c:out value="${board.bno}" /></td>
+							<td><c:out value="${status.count}" /></td>
 							<%-- <td><a href='/board/get?bno=<c:out value="${board.bno}"/>'><c:out value="${board.title}"/></a></td> --%>
 
 							<td><a class='move' href='<c:out value="${board.bno}"/>'>
@@ -81,7 +85,7 @@
 								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
 							</div>
 							<div class="modal-body">
-								처리가 완료되었습니다.
+								
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default"
@@ -96,7 +100,7 @@
 				</div>
 				<!-- /.modal -->
 
-
+				
 
 
 			</div>
@@ -118,13 +122,22 @@
 			if (result === '' || history.state) {
 				return;
 			}
-
-			if (parseInt(result) > 0) {
+			
+			console.log(result + "aaa");
+			
+/*
+			if (result.equals("success")) {
+				console.log("test");
 				$(".modal-body").html(
-						"게시글 " + parseInt(result)
-								+ " 번이 등록되었습니다.");
+						"게시글이 등록되었습니다.");
 			}
+*/
 
+			console.log("test1");
+			$(".modal-body").html(
+					"게시글이 등록되었습니다.");
+
+			console.log("test2");
 			$("#myModal").modal("show");
 		}
 		
