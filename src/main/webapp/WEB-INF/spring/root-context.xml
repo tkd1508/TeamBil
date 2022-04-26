@@ -19,7 +19,7 @@
 
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/sanguk1508?useSSL=false"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/mbasic?useSSL=false"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="1234"></property>
 	</bean>
@@ -37,9 +37,11 @@
 	<!-- mapper (src/main/java) -->
 	<mybatis-spring:scan base-package="com.tomcatTest.test"/> 
 	<mybatis-spring:scan base-package="com.board.mapper"/> 
+	<mybatis-spring:scan base-package="com.reply.mapper"/> 
 	
 	<!-- model (src/main/java) -->
 	<context:component-scan base-package="com.board.vo"></context:component-scan>
+	<context:component-scan base-package="com.reply.vo"></context:component-scan>
 	
 	<!-- @Service를 scan하도록 적어줌 -->
 	<context:component-scan base-package="com.board.service"></context:component-scan>
