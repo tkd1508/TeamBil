@@ -22,12 +22,7 @@ import lombok.extern.log4j.Log4j;
 public class BoardController {
 
 	private BoardService service;
-/*
-	@GetMapping("/register")
-	public void register() {
 
-	}
-*/
 	 @GetMapping("/list")
 	 public void list(Model model) {
 	
@@ -35,15 +30,7 @@ public class BoardController {
 	 model.addAttribute("list", service.list());
 	
 	 }
-	 
-	 @GetMapping("/list2")
-	 public void list2(Model model) {
-	
-	 log.info("list");
-	 model.addAttribute("list", service.list());
-	
-	 }
-
+		
 	// @GetMapping("/list")
 	// public void list(Criteria cri, Model model) {
 	//
@@ -68,6 +55,9 @@ public class BoardController {
 
 	}
 */
+	 
+	@GetMapping("/register") public void register() {  }
+	 
 	@PostMapping("/register")
 	public String register(BoardVO board, RedirectAttributes rttr) {
 

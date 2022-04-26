@@ -42,7 +42,7 @@ public class BoardServiceTests {
 		log.info(service.list()+" ================= list"); // toString 같은 느낌
 		service.list().forEach(board -> log.info(board +" ================= forEach")); // 하나하나의 값 출력
 		}
-	
+	/*
 	@Test public void testGet() {
 		log.info(service.get(4)+" ================= getread");
 		}
@@ -60,7 +60,7 @@ public class BoardServiceTests {
 		dto.setTitle("수정하는 글");
 		log.info(service.modify(dto)+" ================= 수정 결과 출력"); 
 		}
-	
+	*/
 	
 	
 }
