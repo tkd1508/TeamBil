@@ -1,5 +1,7 @@
 package com.reply.mapper;
 
-public interface ReplyMapper {
+import com.reply.vo.ReplyVO;
 
+public interface ReplyMapper {
+	public int insert(ReplyVO vo);
 }
