@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -278,7 +278,7 @@
 
 
 <%@include file="../includes/footer.jsp"%>
-=======
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -291,4 +291,4 @@
 
 </body>
 </html>
->>>>>>> branch 'Sanguk' of https://github.com/tkd1508/TeamBil.git
+
