@@ -36,14 +36,6 @@ public class BoardController {
 	
 	 }
 	 
-	 @GetMapping("/list2")
-	 public void list2(Model model) {
-	
-	 log.info("list");
-	 model.addAttribute("list", service.list());
-	
-	 }
-
 	// @GetMapping("/list")
 	// public void list(Criteria cri, Model model) {
 	//
