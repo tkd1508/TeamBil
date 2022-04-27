@@ -2,7 +2,7 @@ package com.board.service;
 
 import java.util.List;
 
-import com.board.vo.BoardVO;
+import com.board.dto.BoardVO;
 
 public interface BoardService {
 

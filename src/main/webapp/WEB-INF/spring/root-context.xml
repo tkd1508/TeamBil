@@ -39,7 +39,7 @@
 	<mybatis-spring:scan base-package="com.board.mapper"/> 
 	
 	<!-- model (src/main/java) -->
-	<context:component-scan base-package="com.board.vo"></context:component-scan>
+	<context:component-scan base-package="com.board.dto"></context:component-scan>
 	
 	<!-- @Service를 scan하도록 적어줌 -->
 	<context:component-scan base-package="com.board.service"></context:component-scan>

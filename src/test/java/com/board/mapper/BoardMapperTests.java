@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.board.dto.BoardVO;
 import com.board.mapper.BoardMapper;
-import com.board.vo.BoardVO;
 
 import lombok.extern.log4j.Log4j;
 
