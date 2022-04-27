@@ -1,7 +1,8 @@
 package com.board.mapper;
 
 import java.util.List;
-import com.board.dto.BoardVO;
+
+import com.board.vo.BoardVO;
 
 public interface BoardMapper {
 

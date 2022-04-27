@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.board.dto.BoardVO;
 import com.board.service.BoardService;
+import com.board.vo.BoardVO;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
