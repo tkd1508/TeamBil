@@ -70,7 +70,7 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 
-	 @GetMapping({ "/get", "/modify" })
+	 @GetMapping({ "/get", "/modify" }) // @Get매핑 Post맵핑은 URL을 배열로 처리할 수 있기 때문에 여러 URL 설정 처리 가능하다.
 	 public void get(@RequestParam("bno") int bno, Model model) {
 	
 	 log.info("/get or modify ");
