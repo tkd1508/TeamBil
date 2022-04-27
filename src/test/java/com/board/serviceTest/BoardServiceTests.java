@@ -22,29 +22,37 @@ public class BoardServiceTests {
 	@Setter(onMethod_ = @Autowired)
 	private BoardService service;
 	
+	/*
 	@Test
 	public void testExist() {
 		log.info(service);
 		assertNotNull(service); // 이건 뭐지?
 	}
+	*/
 	
 	// register
-	
 	@Test public void testRegister() {
 		BoardVO dto = new BoardVO(); 
-		dto.setTitle("새로 작성하는 글"); dto.setContent("내용"); dto.setWriter("newbie");
+		dto.setTitle("새로 작성하는 글"); dto.setContent("내용2"); dto.setWriter("newbie");
 		service.register(dto);
-		log.info(dto.getBno()+" ================= 새로 생성된 글 번호");
+		
+		log.info(dto.getBno()+" ================= 새로 생성된 글 번호??");
+		//service.selectBno(dto);
+		//log.info(service.selectBno(dto).getBno()+ "=========== 새로 생성된 글 번호?? 모달에 n번째 등록 알림 안하기로함.. 그래서 이거는 쓸모없어짐."); 
 		}
 	
+	
+	/*
 	// selectAll
 	@Test public void testList() {
 		log.info(service.list()+" ================= list"); // toString 같은 느낌
 		service.list().forEach(board -> log.info(board +" ================= forEach")); // 하나하나의 값 출력
 		}
+	*/
+	
 	/*
 	@Test public void testGet() {
-		log.info(service.get(4)+" ================= getread");
+		log.info(service.get(6)+" ================= getread");
 		}
 	
 	
