@@ -11,5 +11,6 @@ public interface BoardService {
 	public boolean modify(BoardVO board);
 	public boolean remove(int bno);
 	public List<BoardVO> list();
+	public BoardVO selectBno(BoardVO board);
 	
 }

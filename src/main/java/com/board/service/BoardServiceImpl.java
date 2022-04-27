@@ -51,4 +51,11 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.list();
 	}
 
+	@Override
+	public BoardVO selectBno(BoardVO board) {
+		// TODO Auto-generated method stub
+		log.info(board + "============ 번 게시글 검색 ");
+		return mapper.selectBno(board);
+	}
+
 }
