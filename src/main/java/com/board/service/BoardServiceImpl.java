@@ -18,11 +18,12 @@ public class BoardServiceImpl implements BoardService {
 
 	@Setter(onMethod_ = @Autowired)
 	private BoardMapper mapper;
-
+	
 	@Override
 	public void register(BoardVO board) {
 		// TODO Auto-generated method stub
 		log.info(board + "============ 등록?? ");
+		mapper.insert(board);
 	}
 
 	@Override
@@ -48,6 +49,13 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardVO> list() { // TODO Auto-generated method stub
 		log.info("===========service List");
 		return mapper.list();
+	}
+
+	@Override
+	public BoardVO selectBno(BoardVO board) {
+		// TODO Auto-generated method stub
+		log.info(board + "============ 번 게시글 검색 ");
+		return mapper.selectBno(board);
 	}
 
 }

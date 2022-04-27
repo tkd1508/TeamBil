@@ -6,4 +6,7 @@
 <select id="read" resultType="BoardVO"> select * from tb1_board where bno = #{bno} </select>
 <delete id="delete"> delete from tb1_board where bno = #{bno} </delete>
 <update id="update"> update tb1_board set title = #{title}, content = #{content}, writer = #{writer}, updateDate = CURRENT_TIMESTAMP where bno = #{bno} </update>
+
+<select id="selectBno" resultType="BoardVO"> select * from tb1_board where title = #{title} and content = #{content} and writer = #{writer} </select>
+
 </mapper>
