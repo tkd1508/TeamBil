@@ -4,4 +4,5 @@ import com.reply.vo.ReplyVO;
 
 public interface ReplyMapper {
 	public int insert(ReplyVO vo);
+	public ReplyVO read(Long rno);
 }
