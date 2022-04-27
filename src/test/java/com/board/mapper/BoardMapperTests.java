@@ -18,20 +18,20 @@ public class BoardMapperTests {
 	@Autowired BoardMapper boardmapper;
 	
 	// insert
-	/*
+	
 	@Test public void testInsert() {
 		BoardVO dto = new BoardVO(); 
 		dto.setTitle("새로 작성하는 글"); dto.setContent("내용"); dto.setWriter("newbie");
 		boardmapper.insert(dto);
 		log.info(dto+" ================= insert");
 		}
-	*/
+	
 	// selectAll
 	@Test public void testList() {
 		log.info(boardmapper.list()+" ================= list"); // toString 같은 느낌
 		boardmapper.list().forEach(board -> log.info(board +" ================= forEach")); // 하나하나의 값 출력
 		}
-	
+	/*
 	@Test public void testRead() {
 		BoardVO dto = boardmapper.read(3);
 		log.info(dto+" ================= read");
@@ -48,4 +48,5 @@ public class BoardMapperTests {
 		int count = boardmapper.update(dto);
 		log.info(count +" ================= update");
 		}
+		*/
 }
