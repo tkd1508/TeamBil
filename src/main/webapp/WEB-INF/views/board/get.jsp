@@ -48,7 +48,8 @@
         <a href="${pageContext.request.contextPath}/board/list" class="btn btn-info">List</a>
         <!-- </button> -->
 
-<%-- <form id='operForm' action="/boad/modify" method="get">
+<%-- 수정 버튼 클릭시 bno를 넘겨주기 위한 hidden 코드
+<form id='operForm' action="/boad/modify" method="get"> 
   <input type='hidden' id='bno' name='bno' value='<c:out value="${board.bno}"/>'>
 </form> --%>
 
@@ -74,9 +75,10 @@
 </div>
 <!-- /.row -->
 
+<!-- 수정 버튼 클릭시 bno를 넘겨주기 위한 hidden 코드 onclick 관련 코드
 <script type="text/javascript">
 $(document).ready(function() {
-  
+ 
   var operForm = $("#operForm"); 
   
   $("button[data-oper='modify']").on("click", function(e){
@@ -93,8 +95,9 @@ $(document).ready(function() {
     operForm.submit();
     
   });  
+
 });
 </script>
-
+ -->
 
 <%@include file="../includes/footer.jsp"%>

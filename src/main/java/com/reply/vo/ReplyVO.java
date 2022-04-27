@@ -3,6 +3,8 @@ package com.reply.vo;
 import lombok.Data;
 import java.util.Date;
 
+
+// 댓글 DTO
 @Data
 public class ReplyVO {
 private Long rno;

@@ -65,7 +65,7 @@ public class BoardController {
 
 		service.register(board);
 
-		rttr.addFlashAttribute("result", "success");
+		rttr.addFlashAttribute("result", "등록");
 		
 		return "redirect:/board/list";
 	}
@@ -89,7 +89,7 @@ public class BoardController {
 	 log.info("modify:" + board);
 	
 	 if (service.modify(board)) {
-	 rttr.addFlashAttribute("result", "success");
+	 rttr.addFlashAttribute("result", "수정");
 	 }
 	 return "redirect:/board/list";
 	 }
@@ -116,7 +116,7 @@ public class BoardController {
 	
 	 log.info("remove..." + bno);
 	 if (service.remove(bno)) {
-	 rttr.addFlashAttribute("result", "success");
+	 rttr.addFlashAttribute("result", "삭제");
 	 }
 	 return "redirect:/board/list";
 	 }

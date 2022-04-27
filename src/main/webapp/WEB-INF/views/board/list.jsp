@@ -133,7 +133,7 @@
 			}
 */
 			$(".modal-body").html(
-					"게시글이 등록되었습니다.");
+					"게시글이 "+ result +"되었습니다.");
 
 			$("#myModal").modal("show");
 		}
