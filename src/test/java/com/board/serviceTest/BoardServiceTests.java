@@ -35,7 +35,6 @@ public class BoardServiceTests {
 		BoardVO dto = new BoardVO(); 
 		dto.setTitle("새로 작성하는 글"); dto.setContent("내용2"); dto.setWriter("newbie");
 		service.register(dto);
-		
 		log.info(dto.getBno()+" ================= 새로 생성된 글 번호??");
 		//service.selectBno(dto);
 		//log.info(service.selectBno(dto).getBno()+ "=========== 새로 생성된 글 번호?? 모달에 n번째 등록 알림 안하기로함.. 그래서 이거는 쓸모없어짐."); 

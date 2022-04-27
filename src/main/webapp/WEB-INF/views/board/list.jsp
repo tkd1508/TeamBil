@@ -24,10 +24,18 @@
 					class="btn btn-info">글 등록하기</a>
 			</p>
 		</div>
-		
-		
-		
-		
+
+<!--  페이지 이동 버튼으로 책 버전은 스크립트 onclick으로 사용하고 있다. (책 버전) _ ref p.250 
+	<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Board List Page
+				<button id='regBtn' type="button" class="btn btn-xs pull-right">
+				RegisterNew Board</button>
+			</div>
+-->
+
 		<div class="card-body">
 			<div class="table-responsive">
 				<table class="table table-bordered" id="dataTable" width="100%"
@@ -44,9 +52,7 @@
 					<c:forEach items="${list}" var="board" varStatus="status">
 						<tr>
 							<td><c:out value="${status.count}" /></td>
-							<%-- <td><a href='/board/get?bno=<c:out value="${board.bno}"/>'><c:out value="${board.title}"/></a></td> --%>
-
-							<td><a class='move' href='<c:out value="${board.bno}"/>'>
+							<td><a class='move' href='${pageContext.request.contextPath}/board/get?bno=<c:out value="${board.bno}"/>'>
 									<c:out value="${board.title}" />
 							</a></td>
 							<td><c:out value="${board.writer}" /></td>
@@ -84,9 +90,7 @@
 									aria-hidden="true">&times;</button>
 								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
 							</div>
-							<div class="modal-body">
-								
-							</div>
+							<div class="modal-body"></div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default"
 									data-dismiss="modal">Close</button>
@@ -99,16 +103,12 @@
 					<!-- /.modal-dialog -->
 				</div>
 				<!-- /.modal -->
-
-				
-
-
 			</div>
 		</div>
 	</div>
-
 </div>
 <!-- /.container-fluid -->
+
 <!-- End of Main Content -->
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -117,13 +117,13 @@
 		
 		checkModal(result);
 		
+		history.replaceState({}, null, null); // 뒤로가기 문제 해결 ref p.255~257
+		
 		function checkModal(result) {
 
 			if (result === '' || history.state) {
 				return;
 			}
-			
-			console.log(result + "aaa");
 			
 /*
 			if (result.equals("success")) {
@@ -132,14 +132,19 @@
 						"게시글이 등록되었습니다.");
 			}
 */
-
-			console.log("test1");
 			$(".modal-body").html(
 					"게시글이 등록되었습니다.");
 
-			console.log("test2");
 			$("#myModal").modal("show");
 		}
+
+/*		페이지 이동 방식 (책 버전) _ ref p.250
+		$("#regBtn").on("click", function() {
+
+			self.location = "/board/register";
+
+		});
+*/
 		
 	});
 </script>
