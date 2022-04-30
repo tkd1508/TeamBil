@@ -1,5 +1,7 @@
 package com.board.mapper;
 
+import java.util.HashMap;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,4 +51,17 @@ public class BoardMapperTests {
 		log.info(count +" ================= update");
 		}
 		*/
+	
+	@Test public void testPaging() {
+		  // 
+	  HashMap<String, Integer> param = new HashMap<String, Integer>();
+	  param.put("pstartno", 0);
+	  param.put("onepageList", 10);
+	  
+	  boardmapper.getListWithPaging(param);
+	  log.info(".......boardmapper 3.."+boardmapper);
+	  log.info(".......listSum 2.."+boardmapper.listSum());
+	  
+	  }
+	
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<<<<<<< HEAD
 <mapper  namespace="com.reply.mapper.ReplyMapper">
 	<insert id="insert">
 		insert into tb1_reply (bno,reply,replyer)
@@ -21,4 +22,11 @@
 		updatedate = now()
 		where rno = #{rno}
 	</update>
+=======
+<mapper namespace="com.reply.mapper.ReplyMapper">
+<insert id="insert">
+		insert into tb1_reply (bno, reply, replyer)
+		values (#{bno},#{reply},#{replyer})
+	</insert>
+>>>>>>> branch 'Ki' of https://github.com/tkd1508/TeamBil.git
 </mapper>
