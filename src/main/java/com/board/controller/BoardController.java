@@ -11,6 +11,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.board.service.BoardService;
 import com.board.vo.BoardVO;
+import com.board.vo.Cirteria;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -23,21 +24,21 @@ public class BoardController {
 
 	private BoardService service;
 
-	 @GetMapping("/list")
-	 public void list(Model model) {
-	
-	 log.info("list");
-	 model.addAttribute("list", service.list());
-	
-	 }
+//	 @GetMapping("/list")
+//	 public void list(Model model) {
+//	
+//	 log.info("list");
+//	 model.addAttribute("list", service.list());
+//	
+//	 }
 		
-	// @GetMapping("/list")
-	// public void list(Criteria cri, Model model) {
-	//
-	// log.info("list: " + cri);
-	// model.addAttribute("list", service.getList(cri));
-	//
-	// }
+	 @GetMapping("/list")
+	 public void list(@RequestParam(value="pstartno", defaultValue="0") int pstartno, Model model) {
+	
+		 model.addAttribute("list", service.getListWithPaging(pstartno)); // 책 p.300 list 동일
+		 model.addAttribute("paging", new Cirteria(pstartno, service.listSum())); // 
+			
+	 }
 	 
 /*
 	@GetMapping("/list")
