@@ -65,12 +65,12 @@ public class BoardController {
 
 		service.register(board);
 
-		rttr.addFlashAttribute("result", "success");
+		rttr.addFlashAttribute("result", "등록");
 		
 		return "redirect:/board/list";
 	}
 
-	 @GetMapping({ "/get", "/modify" })
+	 @GetMapping({ "/get", "/modify" }) // @Get매핑 Post맵핑은 URL을 배열로 처리할 수 있기 때문에 여러 URL 설정 처리 가능하다.
 	 public void get(@RequestParam("bno") int bno, Model model) {
 	
 	 log.info("/get or modify ");
@@ -89,7 +89,7 @@ public class BoardController {
 	 log.info("modify:" + board);
 	
 	 if (service.modify(board)) {
-	 rttr.addFlashAttribute("result", "success");
+	 rttr.addFlashAttribute("result", "수정");
 	 }
 	 return "redirect:/board/list";
 	 }
@@ -116,7 +116,7 @@ public class BoardController {
 	
 	 log.info("remove..." + bno);
 	 if (service.remove(bno)) {
-	 rttr.addFlashAttribute("result", "success");
+	 rttr.addFlashAttribute("result", "삭제");
 	 }
 	 return "redirect:/board/list";
 	 }

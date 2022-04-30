@@ -7,6 +7,21 @@
 <delete id="delete"> delete from tb1_board where bno = #{bno} </delete>
 <update id="update"> update tb1_board set title = #{title}, content = #{content}, writer = #{writer}, updateDate = CURRENT_TIMESTAMP where bno = #{bno} </update>
 
+<!-- 지금은 쓸모없음 -->
 <select id="selectBno" resultType="BoardVO"> select * from tb1_board where title = #{title} and content = #{content} and writer = #{writer} </select>
+
+<!-- 페이징 -->
+  	<select id="paginglist" resultType="BoardVO">
+	select * from tb1_board;
+	</select>
+	
+	<select id="listSum" resultType="int">
+		select count(*) from tb1_board;
+	</select>
+	
+	<select id="getListWithPaging" resultType="BoardVO" parameterType="java.util.HashMap">
+		select * from tb1_board order by bno desc limit #{pstartno} , #{onepageList}
+	</select>
+
 
 </mapper>

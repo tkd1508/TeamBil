@@ -26,5 +26,6 @@
 	
 	<!-- servlet-context의 공간은 주로 controller를 처리하기 위한 공간이다. -->
 	<context:component-scan base-package="com.board.controller"></context:component-scan>
+	<context:component-scan base-package="com.reply.controller"></context:component-scan>
 	
 </beans:beans>
