@@ -53,7 +53,7 @@
 						<tr>
 							<td><c:out value="${paging.listTotal-paging.pstartno-status.index}" /></td>
 							<td><a class='move'
-								href='${pageContext.request.contextPath}/board/get?bno=<c:out value="${board.bno}"/>'>
+								href='${pageContext.request.contextPath}/board/get?bno=<c:out value="${board.bno}"/>&pstartno=<c:out value="${paging.pstartno}"/>'>
 									<c:out value="${board.title}" />
 							</a></td>
 							<td><c:out value="${board.writer}" /></td>

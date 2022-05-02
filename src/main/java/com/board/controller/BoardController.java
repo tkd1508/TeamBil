@@ -72,10 +72,11 @@ public class BoardController {
 	}
 
 	 @GetMapping({ "/get", "/modify" }) // @Get매핑 Post맵핑은 URL을 배열로 처리할 수 있기 때문에 여러 URL 설정 처리 가능하다.
-	 public void get(@RequestParam("bno") int bno, Model model) {
+	 public void get(@RequestParam("bno") int bno, @RequestParam(value="pstartno", defaultValue="0") int pstartno, Model model) {
 	
 	 log.info("/get or modify ");
 	 model.addAttribute("board", service.get(bno));
+	 model.addAttribute("paging", new Cirteria(pstartno, service.listSum())); // 조회 후 되돌아기 클릭시 paging 기억하기
 	 }
 /*
 	@GetMapping({ "/get", "/modify" })
