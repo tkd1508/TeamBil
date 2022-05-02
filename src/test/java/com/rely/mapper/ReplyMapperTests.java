@@ -17,11 +17,10 @@ import lombok.extern.log4j.Log4j;
 @ContextConfiguration(locations= {"file:src/main/webapp/WEB-INF/spring/root-context.xml"})
 @Log4j
 public class ReplyMapperTests {
-<<<<<<< HEAD
+
 	private int[] bnoArr = {1,2,3,4,5};
-=======
-	private Long[] bnoArr = {1L,2L,3L,4L,5L};
->>>>>>> branch 'Ki' of https://github.com/tkd1508/TeamBil.git
+
+	private Long[] bnoArr2 = {1L,2L,3L,4L,5L};
 	@Autowired ReplyMapper replymapper;
 	
 	@Test

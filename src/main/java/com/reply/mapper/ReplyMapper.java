@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.board.vo.Cirteria;
 import com.reply.vo.ReplyVO;
 
 public interface ReplyMapper {
@@ -12,6 +13,6 @@ public interface ReplyMapper {
 	public int delete (int rno);
 	public int update(ReplyVO reply);
 	public List<ReplyVO> getListWithPaging(
-			@Param("cri") Criteria cri,
+			@Param("cri") Cirteria cri,
 			@Param("bno") int bno);
 }
