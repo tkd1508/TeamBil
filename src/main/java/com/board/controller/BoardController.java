@@ -87,11 +87,12 @@ public class BoardController {
 	}
 */
 	 @PostMapping("/modify")
-	 public String modify(BoardVO board, RedirectAttributes rttr) {
+	 public String modify(BoardVO board, @RequestParam(value="pstartno", defaultValue="0") int pstartno, RedirectAttributes rttr) {
 	 log.info("modify:" + board);
 	
 	 if (service.modify(board)) {
 	 rttr.addFlashAttribute("result", "수정");
+	 rttr.addAttribute("pstartno", pstartno);
 	 }
 	 return "redirect:/board/list";
 	 }
@@ -113,12 +114,13 @@ public class BoardController {
 	}
 */
 	 @PostMapping("/remove")
-	 public String remove(@RequestParam("bno") int bno, RedirectAttributes rttr)
+	 public String remove(@RequestParam("bno") int bno, @RequestParam(value="pstartno", defaultValue="0") int pstartno, RedirectAttributes rttr)
 	 {
 	
 	 log.info("remove..." + bno);
 	 if (service.remove(bno)) {
 	 rttr.addFlashAttribute("result", "삭제");
+	 rttr.addAttribute("pstartno", pstartno);
 	 }
 	 return "redirect:/board/list";
 	 }
