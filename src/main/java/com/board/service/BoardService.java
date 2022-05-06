@@ -13,4 +13,8 @@ public interface BoardService {
 	public List<BoardVO> list();
 	public BoardVO selectBno(BoardVO board);
 	
+	// public List<BoardVO> paginglist();
+		public int listSum();
+		public List<BoardVO> getListWithPaging( int pstartno );
+	
 }

@@ -43,9 +43,10 @@
         </div>
 
 		<button data-oper='modify' class="btn btn-default">
-        <a target='_blank' href="${pageContext.request.contextPath}/board/modify?bno=<c:out value="${board.bno}"/>">Modify</a></button>
+        <%-- 새창 띄우는 속성 <a target='_blank' href="${pageContext.request.contextPath}/board/modify?bno=<c:out value="${board.bno}"/>">Modify</a></button> --%>
+        <a href="${pageContext.request.contextPath}/board/modify?bno=<c:out value="${board.bno}"/>&pstartno=<c:out value="${paging.pstartno}"/>">Modify</a></button>
         <!-- <button data-oper='list' class="btn btn-info"> (책버전 코드 / 주로 버튼 코드로 구현되어 있다. 이것은 유행이 지난 코드 노란줄 뜸.)-->
-        <a href="${pageContext.request.contextPath}/board/list" class="btn btn-info">List</a>
+        <a href="${pageContext.request.contextPath}/board/list?pstartno=<c:out value="${paging.pstartno}"/>" class="btn btn-info">List</a>
         <!-- </button> -->
 
 <%-- 수정 버튼 클릭시 bno를 넘겨주기 위한 hidden 코드

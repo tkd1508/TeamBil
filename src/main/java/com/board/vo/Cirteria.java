@@ -5,8 +5,8 @@ import lombok.Data;
 @Data
 public class Cirteria {
 	
-	private int pstartno; // pageNum 추정      1
-	private int listTotal; // amount 추정      10 고정 test
+	private int pstartno; // pageNum 추정      
+	private int listTotal; // amount 추정      
 	private int onepageLimit;
 	private int pageAll;
 	private int bottomlist;
@@ -23,7 +23,7 @@ public class Cirteria {
 		this.listTotal = listTotal;  // amount 추정
 		
 //		private int onepageLimit; 게시판 페이지에 몇개의 DB가 나오는 것도 계산식에 넣어줘야 한다. 지금은 10줄당 1페이지 이동으로 가정
-		this.onepageLimit = 20;
+		this.onepageLimit = 10;
 		
 		
 		////////// 여기서부터 parameter의 영향을 받는다 =============================================
@@ -47,7 +47,9 @@ public class Cirteria {
 		// 1 page = ((레코드 0~9 까지의 10개)+1)올림 / 10
 		// 현재 페이지는 레코드의 갯수로 페이지를 판별한다.
 		
+		// (2/5)내림 * 5(배수가 되는군) +1 
 		this.startBtn = (((int) Math.floor((this.currentBtn-1)/(float)this.bottomlist))*bottomlist) + 1;
+		
 		
 		this.endBtn = this.startBtn + bottomlist -1; // 이렇게만하면 끝자리가 무조건 30이 뜨는데 중간 컨텐츠가 없을 수도 있는것을 가정해야한다.
 		
