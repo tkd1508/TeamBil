@@ -3,6 +3,7 @@ package com.board.serviceTest;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -71,7 +72,7 @@ public class BoardServiceTests {
 		log.info(service.modify(dto)+" ================= 수정 결과 출력"); 
 		}
 	*/
-	
+	/*
 	 @Test public void testGetList() {
 		  // 
 	  
@@ -80,5 +81,27 @@ public class BoardServiceTests {
 	  log.info(".......888.."+service.getListWithPaging(0)); // 9~0 까지 10개 출력
 	  
 	  }
+	 
+	 @Test public void testPaging() {
+		  // 
+	  HashMap<String, Integer> param = new HashMap<String, Integer>();
+	  param.put("pstartno", 0);
+	  param.put("onepageList", 10);
+	  
+	  service.getListWithPaging(10);
+	  log.info(".......boardmapper 3.."+service);
+	  log.info(".......listSum 2.."+service.listSum());
+	  
+	  }
+	 */
+	 @Test
+	public void testSearch() {
+		Cirteria cri = new Cirteria();
+		cri.setKeyword("새로");
+		cri.setType("TC");
+		
+		List<BoardVO> list = service.getListWithPaging(1);
+		list.forEach(board -> log.info("..............."+board));
+	}
 	
 }

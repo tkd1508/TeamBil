@@ -15,6 +15,7 @@ public class Cirteria {
 	private int endBtn;
 	
 	public Cirteria() {
+	
 	}
 
 	public Cirteria(int pstartno , int listTotal) { // 0, 10, 20, 30,,,
@@ -69,7 +70,7 @@ public class Cirteria {
 
 	
 	public Cirteria(int listTotal, int onepageLimit, int pageAll, int bottomlist, int pstartno, int currentBtn,
-			int startBtn, int endBtn, String type, String keyword, String[] typeArr) {
+			int startBtn, int endBtn, String type, String keyword) {
 		super();
 		this.listTotal = listTotal;
 		this.onepageLimit = onepageLimit;
@@ -81,7 +82,10 @@ public class Cirteria {
 		this.endBtn = endBtn;
 		this.type = type;
 		this.keyword = keyword;
-		this.typeArr = typeArr;
+	}
+	
+	public String [] getTypeArr() {
+		return type == null? new String[] {} : type.split("");
 	}
 
 
@@ -94,6 +98,5 @@ public class Cirteria {
 	/* 검색어 키워드 */
 	private String keyword;
 	/* 검색 타입 배열 */
-	private String[] typeArr;
 	
 }

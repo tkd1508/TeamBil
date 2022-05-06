@@ -1,6 +1,7 @@
 package com.board.mapper;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.board.mapper.BoardMapper;
 import com.board.vo.BoardVO;
+import com.board.vo.Cirteria;
 
 import lombok.extern.log4j.Log4j;
 
@@ -52,16 +54,8 @@ public class BoardMapperTests {
 		}
 		*/
 	
-	@Test public void testPaging() {
-		  // 
-	  HashMap<String, Integer> param = new HashMap<String, Integer>();
-	  param.put("pstartno", 0);
-	  param.put("onepageList", 10);
-	  
-	  boardmapper.getListWithPaging(param);
-	  log.info(".......boardmapper 3.."+boardmapper);
-	  log.info(".......listSum 2.."+boardmapper.listSum());
-	  
-	  }
+	
+	
+	
 	
 }
