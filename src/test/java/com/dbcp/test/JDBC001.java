@@ -13,7 +13,7 @@ public class JDBC001 {
 	public void test() throws Exception {
 		try {
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mbasic?useSSL=false", "root", "1234");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sanguk1508?useSSL=false", "root", "1234");
 		
 		if(conn != null) {
 			log.info(conn+".......1");

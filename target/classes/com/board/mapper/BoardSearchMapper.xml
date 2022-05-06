@@ -38,7 +38,7 @@
 		페이징구문은 추가해야합니다~~~
 	-->
 	<select id="getTotalList" resultType="BoardVO">
-		SELECT bno, title, content, regdate, updatedate FROM tb1_board ORDER BY bno ;
+		SELECT bno, title, content, regdate, updatedate FROM tb1_board ORDER BY bno;
 	</select>
 	
 	<!-- if구문을 통해 조건에 맞는 게시물을 출력해줍니다. -->
