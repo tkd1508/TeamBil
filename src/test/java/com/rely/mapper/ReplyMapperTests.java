@@ -1,5 +1,6 @@
 package com.rely.mapper;
 
+import java.util.List;
 import java.util.stream.IntStream;
 
 import org.junit.Test;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.board.vo.Cirteria;
 import com.reply.mapper.ReplyMapper;
 import com.reply.vo.ReplyVO;
 
@@ -66,5 +68,14 @@ public class ReplyMapperTests {
 	@Test
 	public void testMapper() {
 		log.info(replymapper);
+	}
+	
+	@Test
+	public void testList() {
+		Cirteria cri = new Cirteria();
+		
+		List<ReplyVO> replies = replymapper.getListWithPaging(cri, bnoArr[0]);
+		
+		replies.forEach(reply -> log.info(reply));
 	}
 }
