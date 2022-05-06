@@ -73,7 +73,7 @@ public class SampleController {
 			@PathVariable("pid") Integer pid){
 		return new String[] {"categoryu:"+cat, "productid:"+pid};
 	}
-	@PostMapping("ticket")
+	@PostMapping("ticket") // p.368~370
 	public Ticket convert(@RequestBody Ticket ticket) {
 		log.info("conver.....ticket"+ticket);
 		return ticket;
