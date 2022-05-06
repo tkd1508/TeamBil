@@ -2,6 +2,8 @@ package com.board.serviceTest;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.util.HashMap;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.board.service.BoardService;
 import com.board.vo.BoardVO;
+import com.board.vo.Cirteria;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -29,7 +32,7 @@ public class BoardServiceTests {
 		assertNotNull(service); // 이건 뭐지?
 	}
 	*/
-	
+	/*
 	// register
 	@Test public void testRegister() {
 		BoardVO dto = new BoardVO(); 
@@ -40,7 +43,7 @@ public class BoardServiceTests {
 		//log.info(service.selectBno(dto).getBno()+ "=========== 새로 생성된 글 번호?? 모달에 n번째 등록 알림 안하기로함.. 그래서 이거는 쓸모없어짐."); 
 		}
 	
-	
+	*/
 	/*
 	// selectAll
 	@Test public void testList() {
@@ -69,5 +72,13 @@ public class BoardServiceTests {
 		}
 	*/
 	
+	 @Test public void testGetList() {
+		  // 
+	  
+	  service.listSum();
+	  log.info(".......3.."+service);
+	  log.info(".......888.."+service.getListWithPaging(0)); // 9~0 까지 10개 출력
+	  
+	  }
 	
 }
