@@ -7,12 +7,12 @@ import java.util.Date;
 // 댓글 DTO
 @Data
 public class ReplyVO {
-private Long rno;
-private Long bno;
+private int rno;
+private int bno;
 
 private String reply;
 private String replyer;
-private Date replyDate;
-private Date updateDate;
+private String replyDate;
+private String updateDate;
 
 }

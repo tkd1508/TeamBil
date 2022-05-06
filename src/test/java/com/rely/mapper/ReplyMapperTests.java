@@ -17,8 +17,37 @@ import lombok.extern.log4j.Log4j;
 @ContextConfiguration(locations= {"file:src/main/webapp/WEB-INF/spring/root-context.xml"})
 @Log4j
 public class ReplyMapperTests {
-	private Long[] bnoArr = {1L,2L,3L,4L,5L};
+
+	private int[] bnoArr = {1,2,3,4,5};
+
+	private Long[] bnoArr2 = {1L,2L,3L,4L,5L};
 	@Autowired ReplyMapper replymapper;
+	
+	@Test
+	public void testUpdate() {
+		int targetRno=10;
+		ReplyVO vo=replymapper.read(targetRno);
+		vo.setReply("Update Reply");
+		
+		int count = replymapper.update(vo);
+		
+		log.info("UPDATE COUNT:"+count);
+	}
+	
+	@Test
+	public void testDelete() {
+		int targetRno =1;
+		replymapper.delete(targetRno);
+	}
+	
+	@Test
+	public void testRead() {
+		int targetRno = 5;
+		ReplyVO vo = replymapper.read(targetRno);
+		
+		log.info(vo);
+	}
+	
 	
 	@Test
 	public void testCreate() {
