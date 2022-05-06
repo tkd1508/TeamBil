@@ -17,7 +17,7 @@ import lombok.extern.log4j.Log4j;
 @ContextConfiguration(locations= {"file:src/main/webapp/WEB-INF/spring/root-context.xml"})
 @Log4j
 public class ReplyMapperTests {
-	private Long[] bnoArr = {1L,2L};
+	private Long[] bnoArr = {1L,2L,3L,4L,5L};
 	@Autowired ReplyMapper replymapper;
 	
 	@Test

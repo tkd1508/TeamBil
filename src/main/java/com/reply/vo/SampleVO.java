@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+//예제 DTO
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

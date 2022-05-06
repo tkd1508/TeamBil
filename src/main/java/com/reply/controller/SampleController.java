@@ -69,11 +69,11 @@ public class SampleController {
 	
 	@GetMapping("/product/{cat}/{pid}")
 	public String[]getPath(
-			@PathVariable("cat") String cat,
+			@PathVariable("cat") String cat,//rest api이용할때 사용 uri경로에서 값을 가져온다.
 			@PathVariable("pid") Integer pid){
 		return new String[] {"categoryu:"+cat, "productid:"+pid};
 	}
-	@PostMapping("ticket")
+	@PostMapping("ticket") // p.368~370
 	public Ticket convert(@RequestBody Ticket ticket) {
 		log.info("conver.....ticket"+ticket);
 		return ticket;
