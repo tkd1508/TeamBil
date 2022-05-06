@@ -170,12 +170,19 @@
 					</form>
 
 					<!-- Topbar Search -->
-					<form
+					<form id = "searchForm" action="${pageContext.request.contextPath}/board/list" method="get"
 						class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 						<div class="input-group">
+							<select class="form-control search-select" name="type">
+								<option value="" <c:out value="${pageMaker.cri.type == null?'selected':'' }"/>>---</option>
+								<option value="T" <c:out value="${pageMaker.cri.type eq 'T'?'selected':'' }"/>>제목</option>
+								<option value="C" <c:out value="${pageMaker.cri.type eq 'C'?'selected':'' }"/>>내용</option>
+								<option value="W" <c:out value="${pageMaker.cri.type eq 'W'?'selected':'' }"/>>작성자</option>
+								<option value="TC" <c:out value="${pageMaker.cri.type eq 'TC'?'selected':'' }"/>>제목+내용</option>
+							</select>
 							<input type="text" class="form-control bg-light border-0 small"
 								placeholder="Search for..." aria-label="Search"
-								aria-describedby="basic-addon2">
+								aria-describedby="basic-addon2" name="keyword" value='<c:out value="${pageMaker.cri.keyword}"/>' />
 							<div class="input-group-append">
 								<button class="btn btn-primary" type="button">
 									<i class="fas fa-search fa-sm"></i>
@@ -183,7 +190,26 @@
 							</div>
 						</div>
 					</form>
-
+					<script type="text/javascript">
+						var searchForm = $("#searchForm");
+						
+						$("#searchForm button").on("cilck", function(e) {
+							if(!searchForm.find("option:selected").val()){
+								alert("검색종류를 선택하세요");
+								return false;
+							}
+							
+							if(!searchForm.find("inpu[name='keyword']}").val()){
+								alert("키워드를 입력하세요");
+								return false;
+							}
+							
+							searchForm.find("inpu[name='pageNum']").val("1");
+							searchForm.submit();
+							
+						})
+						
+					</script>
 					<!-- Topbar Navbar -->
 					<ul class="navbar-nav ml-auto">
 
@@ -355,7 +381,7 @@
 
 				</nav>
 				<!-- End of Topbar -->
-
+				
 				<div id="page-wrapper">
 					<script
 						src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
